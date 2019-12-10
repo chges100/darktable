@@ -648,7 +648,7 @@ void aggregate_and_set_slider(ControllerMidi *midi,
           dt_control_hinter_message (darktable.control, "");
 
           GSList *al = darktable.control->dynamic_accelerator_list;
-          dt_accel_dynamic_t *da;
+          dt_accel_dynamic_t *da = NULL ;
           while(al)
           {
             da = (dt_accel_dynamic_t *)al->data;
