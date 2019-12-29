@@ -241,7 +241,8 @@ void refresh_knobs_to_controller(ControllerMidi *midi)
         buf[1] = k->key;
         buf[2] = velocity;
 
-        write(g_io_channel_unix_get_fd (midi->io), buf, 3);
+        int tmp = write(g_io_channel_unix_get_fd (midi->io), buf, 3);
+        tmp++;
       }
 #ifdef HAVE_ALSA
       else if (midi->sequencer)
@@ -897,7 +898,8 @@ gboolean midi_read_event (GIOChannel   *io,
   {
       // Send Universal Device Inquiry message 
       char inquiry[6] = "\xF0\x7E\x7F\x06\x01\xF7";
-      write(g_io_channel_unix_get_fd (midi->io), inquiry, 6);
+      int tmp = write(g_io_channel_unix_get_fd (midi->io), inquiry, 6);
+      tmp++;
 
       midi->name_queried = TRUE;
       return TRUE; // ignore rest of input
