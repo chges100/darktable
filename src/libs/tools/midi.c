@@ -24,7 +24,7 @@
 #include "common/file_location.h"
 #include <fcntl.h>
 
-char midi_devices[] = "alsa,/dev/midi1,/dev/midi2,/dev/midi3,/dev/midi4";
+char midi_devices[] = "alsa,/dev/midi1,/dev/midi2,/dev/midi3,/dev/midi4,/dev/dmmidi1,/dev/dmmidi2,/dev/dmmidi3,/dev/dmmidi4";
 
 DT_MODULE(1)
 
